@@ -80,7 +80,7 @@ class ORMUnitTestCase {
         scope.inTransaction(session -> {
             MyEntity entity = session.find(MyEntity.class, 3L);
 
-            // Should Hibernate Validator be more aggressive in their traversable resolver implementation?
+            // Should we be more aggressive in the traversable resolver implementation?
             HibernateTraversableResolver traversableResolver =
                     new HibernateTraversableResolver(null, irrelevantHack(), scope.getSessionFactory());
 
