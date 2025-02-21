@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(platform('org.hibernate.orm:hibernate-platform:latest.release'))
+    implementation(platform('org.junit:junit-bom:5.11.4'))
+
+    testImplementation 'org.hibernate.orm:hibernate-core'
+    testImplementation 'org.hibernate.validator:hibernate-validator:latest.release'
+    testImplementation 'org.hibernate.orm:hibernate-testing'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+
+    testRuntimeOnly 'com.h2database:h2:latest.release'
+    testRuntimeOnly 'org.glassfish:jakarta.el:latest.release'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+group = 'org.hibernate.testcasetemplate'
+version = '1.0.0.Final'
+description = 'Hibernate ORM 6 Test Case Template'
+
+test {
+    useJUnitPlatform()
+}
